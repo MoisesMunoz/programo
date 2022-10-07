@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="dark" class="ion-padding">
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title><h2>{{titulo}}</h2></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let item of comidas" >
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>{{item.idMeal}}</ion-card-subtitle>
+        <ion-card-title>{{item.strMeal}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-img src="{{item.strMealThumb}}"></ion-img>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

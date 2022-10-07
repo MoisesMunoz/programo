@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-icon slot="start" name="home" size="large" class="ion-padding"></ion-icon>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-text slot="end" class="ion-padding" (click)="cerrarSesion()">
+      <p>Salir</p>
+    </ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-text color="tertiary" class="ion-text-center">
+    <h1>Bienvenido</h1>
+  </ion-text>
+
+  <ion-list *ngFor="let category of categorias" >
+    <ion-card (click)="verCategoria(category.strCategory)">
+      <ion-card-header>
+        <ion-card-subtitle>{{category.idCategory}}</ion-card-subtitle>
+        <ion-card-title>{{category.strCategory}}</ion-card-title>
+        <ion-img src="{{category.strCategoryThumb}}"></ion-img>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{category.strCategoryDescription}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
